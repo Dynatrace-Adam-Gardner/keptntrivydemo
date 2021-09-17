@@ -1,0 +1,68 @@
+{
+  "metadata": {
+    "configurationVersions": [
+      5
+    ],
+    "clusterVersion": "1.227.46.20210916-165543"
+  },
+  "id": "a4831d96-75ff-48e6-b3ae-89caef0d0f1a",
+  "dashboardMetadata": {
+    "name": "New dashboard (Sep 17, 2021 17:18:07)",
+    "shared": false,
+    "owner": "adam.gardner@dynatrace.com",
+    "sharingDetails": {
+      "linkShared": false,
+      "published": false
+    },
+    "tags": null
+  },
+  "tiles": [
+    {
+      "name": "sli=trivy_critical_vulns;pass=\u003c10",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "query": "",
+      "type": "",
+      "CustomName": "Data explorer results",
+      "Markdown": "",
+      "bounds": {
+        "top": 0,
+        "left": 0,
+        "width": 1330,
+        "height": 266
+      },
+      "tileFilter": {
+        "timeframe": ""
+      },
+      "queries": [
+        {
+          "id": "A",
+          "metric": "trivy.vulnerabilities.CRITICAL",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "image"
+          ],
+          "filterBy": {
+            "filterOperator": "",
+            "nestedFilters": [],
+            "criteria": []
+          }
+        }
+      ],
+      "assignedEntities": null,
+      "filterConfig": {
+        "type": "",
+        "customName": "",
+        "defaultName": "",
+        "chartConfig": {
+          "legendShown": false,
+          "type": "",
+          "series": null,
+          "resultMetadata": {}
+        },
+        "filtersPerEntityType": null
+      }
+    }
+  ]
+}
