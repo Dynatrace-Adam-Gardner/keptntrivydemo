@@ -22,4 +22,4 @@ actions:
             value: "$.data.scan.metrics_endpoint"
           - name: METRICS_API_TOKEN
             valueFrom: event
-            value: "$.data.scan.nmetrics_token"
+            value: "$.data.scan.metrics_token"
