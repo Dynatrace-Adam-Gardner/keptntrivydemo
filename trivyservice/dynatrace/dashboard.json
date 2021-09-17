@@ -18,7 +18,7 @@
   },
   "tiles": [
     {
-      "name": "sli=trivy_critical_vulns;pass=\u003c10",
+      "name": "sli=trivy_critical_vulns",
       "tileType": "DATA_EXPLORER",
       "configured": true,
       "query": "",
