@@ -40,9 +40,7 @@
           "metric": "trivy.vulnerabilities.CRITICAL",
           "spaceAggregation": "AVG",
           "timeAggregation": "DEFAULT",
-          "splitBy": [
-            "image"
-          ],
+          "splitBy": [],
           "filterBy": {
             "filterOperator": "",
             "nestedFilters": [],
