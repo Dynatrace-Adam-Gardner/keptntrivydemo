@@ -10,4 +10,3 @@ spec:
         - name: demosequence
           tasks:
           - name: securityscan
-          - name: evaluation
