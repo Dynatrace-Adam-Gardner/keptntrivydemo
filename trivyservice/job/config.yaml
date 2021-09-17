@@ -17,3 +17,9 @@ actions:
           - name: TAG
             valueFrom: event
             value: "$.data.scan.tag"
+          - name: METRICS_ENDPOINT
+            valueFrom: event
+            value: "$.data.scan.metrics_endpoint"
+          - name: METRICS_API_TOKEN
+            valueFrom: event
+            value: "$.data.scan.nmetrics_token"
