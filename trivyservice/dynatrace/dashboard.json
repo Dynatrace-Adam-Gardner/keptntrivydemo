@@ -3,7 +3,7 @@
     "configurationVersions": [
       5
     ],
-    "clusterVersion": "1.227.46.20210916-165543"
+    "clusterVersion": "1.227.53.20210917-134716"
   },
   "id": "a4831d96-75ff-48e6-b3ae-89caef0d0f1a",
   "dashboardMetadata": {
@@ -23,8 +23,8 @@
       "configured": true,
       "query": "",
       "type": "",
-      "CustomName": "Data explorer results",
-      "Markdown": "",
+      "customName": "Data explorer results",
+      "markdown": "",
       "bounds": {
         "top": 0,
         "left": 0,
