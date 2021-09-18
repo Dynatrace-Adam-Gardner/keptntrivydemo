@@ -188,3 +188,42 @@ total_score:
   pass: 90%
   warning: 75%
 ```
+
+![image](https://user-images.githubusercontent.com/13639658/133870693-44535038-06cd-4f50-b982-b2955f112b3b.png)
+
+
+## Request an Evaluation
+
+We're ready to run an evaluation. Remember that our sequence is called `demosequence` because that's what we specified in the `shipyard.yaml` file.
+
+So now ask Keptn to run the `demosequence`.
+
+```
+HTTP POST to http://keptn-ip/api/v1/event
+{
+  "data": {
+    "project": "trivyintegration",
+    "service": "trivyservice",
+    "stage": "main",
+    "labels": {
+        "runBy": "AG"
+    },
+    "scan": {
+      "level": "CRITICAL",
+      "image": "mysql",
+      "tag": "8.0.26",
+      "metrics_endpoint": "https://abc123.live.dynatrace.com",
+      "metrics_token": "dt0c01.***"
+    },
+    "evaluation": {
+        "timeframe": "5m"
+    }
+  },
+  "source": "POSTMAN",
+  "specversion": "1.0",
+  "shkeptnspecversion": "0.2.3",
+  "contenttype": "application/json",
+  "type": "sh.keptn.event.main.demosequence.triggered"
+}
+```
+
