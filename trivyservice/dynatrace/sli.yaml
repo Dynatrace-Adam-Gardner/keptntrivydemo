@@ -1,3 +1,3 @@
 spec_version: 0.1.4
 indicators:
-  - trivyvulns3: "metricSelector=trivy.vulnerabilities.total"
+  - trivyvulns4: "metricSelector=builtin:host.cpu.usage"
