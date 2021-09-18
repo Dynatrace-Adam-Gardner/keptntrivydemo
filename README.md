@@ -23,4 +23,17 @@ keptn create secret dynatrace-api-token \
 Create shipyard:
 
 ```
+---
+apiVersion: spec.keptn.sh/0.2.0
+kind: Shipyard
+metadata:
+  name: myshipyard
+spec:
+  stages:
+    - name: main
+      sequences:
+        - name: demosequence
+          tasks:
+          - name: securityscan
+          - name: evaluation
 ```
