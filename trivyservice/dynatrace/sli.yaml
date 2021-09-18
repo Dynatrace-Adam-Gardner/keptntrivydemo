@@ -1,5 +1,3 @@
 ---
-spec_version: 0.1.4
 indicators:
   trivy_vulns: "metricSelector=trivy.vulnerabilities.CRITICAL"
-  mysql_vulns2: "metricSelector=trivy.vulnerabilities.CRITICAL:filter(and(eq(image,mysql)))"
