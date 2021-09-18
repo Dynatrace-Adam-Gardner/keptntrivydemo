@@ -18,7 +18,7 @@
   },
   "tiles": [
     {
-      "name": "sli=trivy_critical_vuln",
+      "name": "CPU Percentage;sli=cpu_percentage",
       "tileType": "DATA_EXPLORER",
       "configured": true,
       "query": "",
@@ -26,52 +26,7 @@
       "customName": "Data explorer results",
       "markdown": "",
       "bounds": {
-        "top": 0,
-        "left": 0,
-        "width": 1330,
-        "height": 266
-      },
-      "tileFilter": {
-        "timeframe": ""
-      },
-      "queries": [
-        {
-          "id": "A",
-          "metric": "trivy.vulnerabilities.CRITICAL",
-          "spaceAggregation": "AVG",
-          "timeAggregation": "DEFAULT",
-          "splitBy": [],
-          "filterBy": {
-            "filterOperator": "",
-            "nestedFilters": [],
-            "criteria": []
-          }
-        }
-      ],
-      "assignedEntities": null,
-      "filterConfig": {
-        "type": "",
-        "customName": "",
-        "defaultName": "",
-        "chartConfig": {
-          "legendShown": false,
-          "type": "",
-          "series": null,
-          "resultMetadata": {}
-        },
-        "filtersPerEntityType": null
-      }
-    },
-    {
-      "name": "sli=cpu_percentage",
-      "tileType": "DATA_EXPLORER",
-      "configured": true,
-      "query": "",
-      "type": "",
-      "customName": "Data explorer results",
-      "markdown": "",
-      "bounds": {
-        "top": 266,
+        "top": 190,
         "left": 0,
         "width": 304,
         "height": 304
