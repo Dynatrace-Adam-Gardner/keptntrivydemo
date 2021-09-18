@@ -7,6 +7,9 @@ comparison:
   aggregate_function: avg
 objectives:
 - sli: trivy_vulns
+  pass:
+    - criteria:
+      - "<10"
 total_score:
   pass: 90%
   warning: 75%
