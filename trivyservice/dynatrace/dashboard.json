@@ -7,7 +7,7 @@
   },
   "id": "a4831d96-75ff-48e6-b3ae-89caef0d0f1a",
   "dashboardMetadata": {
-    "name": "New dashboard (Sep 17, 2021 17:18:07)",
+    "name": "trivydemo",
     "shared": false,
     "owner": "adam.gardner@dynatrace.com",
     "sharingDetails": {
@@ -38,6 +38,51 @@
         {
           "id": "A",
           "metric": "trivy.vulnerabilities.CRITICAL",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "filterBy": {
+            "filterOperator": "",
+            "nestedFilters": [],
+            "criteria": []
+          }
+        }
+      ],
+      "assignedEntities": null,
+      "filterConfig": {
+        "type": "",
+        "customName": "",
+        "defaultName": "",
+        "chartConfig": {
+          "legendShown": false,
+          "type": "",
+          "series": null,
+          "resultMetadata": {}
+        },
+        "filtersPerEntityType": null
+      }
+    },
+    {
+      "name": "sli=cpu_percentage",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "query": "",
+      "type": "",
+      "customName": "Data explorer results",
+      "markdown": "",
+      "bounds": {
+        "top": 266,
+        "left": 0,
+        "width": 304,
+        "height": 304
+      },
+      "tileFilter": {
+        "timeframe": ""
+      },
+      "queries": [
+        {
+          "id": "A",
+          "metric": "builtin:host.cpu.usage",
           "spaceAggregation": "AVG",
           "timeAggregation": "DEFAULT",
           "splitBy": [],
