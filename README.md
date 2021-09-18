@@ -129,3 +129,38 @@ actions:
 This file tells the `job-executor-service` to listen for the `sh.keptn.event.securityscan.triggered` event and when heard, run the `adamgardnerdt/trivy:v1.0` container and also set some environment variables.
 
 We will pass these environment variables in via the HTTP POST when we trigger Keptn.
+
+![image](https://user-images.githubusercontent.com/13639658/133870539-fcb7b394-06ba-4862-9533-a83446df6d9f.png)
+
+
+## Setup SLI (Metric) Retrieval
+
+The trivy container is compatible with Dynatrace so it will push metrics into a Dynatrace backend.
+
+Therefore we need to tell Keptn to retrieve metrics from Dynatrace. WE've done the first bits by installing the `dynatrace-service` and creating the secret. Tell the `dynatrace-service` how to auth to your DT tenant.
+
+In the `main` branch, create a folder called `dynatrace` and inside here, create a file called `dynatrace.conf.yaml`:
+
+```
+---
+dtCreds: dynatrace-api-token
+```
+
+This tells Keptn to use the secret you created earlier.
+
+![image](https://user-images.githubusercontent.com/13639658/133870553-a70bd376-ccba-4585-81f2-4e94f698e036.png)
+
+## Setup SLIs
+
+Create a second file in the `dynatrace` folder called `sli.yaml`. This is how we define what metrics to pull out of Dynatrace.
+
+This metrics ID is created automatically when the container image runs and pushes metrics to Dynatrace.
+
+If you're using a different severity, just change `CRITICAL` to whatever level you want (case sensitive)!
+
+
+```
+---
+indicators:
+  trivy_vulns: "metricSelector=trivy.vulnerabilities.CRITICAL"
+```
