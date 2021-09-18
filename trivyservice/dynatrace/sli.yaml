@@ -1,4 +1,4 @@
 ---
 spec_version: 0.1.4
 indicators:
-  trivy_vulns: "metricSelector=trivy.vulnerabilities.CRITICAL"
+  trivy_vulns: "metricSelector=trivy.vulnerabilities.CRITICAL:splitBy(image)"
