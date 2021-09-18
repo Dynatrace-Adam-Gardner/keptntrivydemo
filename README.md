@@ -93,3 +93,39 @@ keptn create project trivyintegration \
 ```
 keptn create service trivyservice --project=trivyintegration
 ```
+
+## Setup Job Executor Service
+Switch to the `main` branch and create a new folder called `job` under the `trivyservice` folder.
+Inside the `job` folder, create a file called `config.yaml`:
+
+```
+---
+apiVersion: v2
+actions:
+  - name: "Run Aquasec Trivy"
+    events:
+      - name: "sh.keptn.event.securityscan.triggered"
+    tasks:
+      - name: "Run Trivy Evaluation"
+        image: "adamgardnerdt/trivy:v1.0"
+        env:
+          - name: TRIVY_SECURITY
+            valueFrom: event
+            value: "$.data.scan.level"
+          - name: IMAGE
+            valueFrom: event
+            value: "$.data.scan.image"
+          - name: TAG
+            valueFrom: event
+            value: "$.data.scan.tag"
+          - name: METRICS_ENDPOINT
+            valueFrom: event
+            value: "$.data.scan.metrics_endpoint"
+          - name: METRICS_API_TOKEN
+            valueFrom: event
+            value: "$.data.scan.metrics_token"
+```
+
+This file tells the `job-executor-service` to listen for the `sh.keptn.event.securityscan.triggered` event and when heard, run the `adamgardnerdt/trivy:v1.0` container and also set some environment variables.
+
+We will pass these environment variables in via the HTTP POST when we trigger Keptn.
