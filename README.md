@@ -164,3 +164,27 @@ If you're using a different severity, just change `CRITICAL` to whatever level y
 indicators:
   trivy_vulns: "metricSelector=trivy.vulnerabilities.CRITICAL"
 ```
+
+## Setup SLOs
+
+Move back one directory to the `trivyservice` folder and create a file called `slo.yaml`. This will hold your SLO definitions that Keptn will use once it has pulled the metrics.
+
+In our case, tell KEptn that as long as we have fewer than 10 CRITICAL vulnerabilities, the metric is a pass.
+
+```
+spec_version: "0.1.0"
+filter: {}
+comparison:
+  compare_with: single_result
+  include_result_with_score: pass
+  number_of_comparison_results: 1
+  aggregate_function: avg
+objectives:
+- sli: trivy_vulns
+  pass:
+    - criteria:
+      - "<10"
+total_score:
+  pass: 90%
+  warning: 75%
+```
