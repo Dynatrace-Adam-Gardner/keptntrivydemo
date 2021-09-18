@@ -7,7 +7,6 @@ comparison:
   aggregate_function: avg
 objectives:
 - sli: trivy_vulns
-- sli: mysql_vulns
 total_score:
   pass: 90%
   warning: 75%
