@@ -6,7 +6,7 @@ comparison:
   number_of_comparison_results: 1
   aggregate_function: avg
 objectives:
-- sli: trivyvulns2
+- sli: trivyvulns3
   pass:
   - criteria:
     - <10
