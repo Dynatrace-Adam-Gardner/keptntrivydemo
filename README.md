@@ -199,23 +199,23 @@ We're ready to run an evaluation. Remember that our sequence is called `demosequ
 So now ask Keptn to run the `demosequence`.
 
 ```
-HTTP POST to http://keptn-ip/api/v1/event
--H "x-token: $KEPTN_API_TOKEN"
-
-{
+curl -X POST $KEPTN_API_URL/v1/event \
+-H "x-token: $KEPTN_API_TOKEN" \
+-H "Content-Type: application/json" \
+-d '{
   "data": {
     "project": "trivyintegration",
     "service": "trivyservice",
     "stage": "main",
     "labels": {
-        "runBy": "AG"
+        "runBy": "agardner.net"
     },
     "scan": {
       "level": "CRITICAL",
       "image": "mysql",
       "tag": "8.0.26",
-      "metrics_endpoint": "https://abc123.live.dynatrace.com",
-      "metrics_token": "dt0c01.***"
+      "metrics_endpoint": "$DT_TENANT",
+      "metrics_token": "$DT_API_TOKEN"
     },
     "evaluation": {
         "timeframe": "5m"
@@ -226,6 +226,6 @@ HTTP POST to http://keptn-ip/api/v1/event
   "shkeptnspecversion": "0.2.3",
   "contenttype": "application/json",
   "type": "sh.keptn.event.main.demosequence.triggered"
-}
+}'
 ```
 
