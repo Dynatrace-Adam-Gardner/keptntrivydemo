@@ -126,7 +126,7 @@ actions:
             value: "$.data.scan.metrics_token"
 ```
 
-This file tells the `job-executor-service` to listen for the `sh.keptn.event.securityscan.triggered` event and when heard, run the `adamgardnerdt/trivy:v1.0` container and also set some environment variables.
+This file tells the `job-executor-service` to listen for the `sh.keptn.event.securityscan.triggered` event and when heard, run the `adamgardnerdt/trivy:v1` container and also set some environment variables.
 
 We will pass these environment variables in via the HTTP POST when we trigger Keptn.
 
