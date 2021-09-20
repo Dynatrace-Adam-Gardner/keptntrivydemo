@@ -117,7 +117,7 @@ actions:
       - name: "sh.keptn.event.securityscan.triggered"
     tasks:
       - name: "Run Trivy Evaluation"
-        image: "adamgardnerdt/trivy:v1.0"
+        image: "adamgardnerdt/trivy:v1"
         env:
           - name: TRIVY_SECURITY
             valueFrom: event
