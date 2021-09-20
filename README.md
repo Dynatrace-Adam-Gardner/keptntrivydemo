@@ -154,7 +154,7 @@ This tells Keptn to use the secret you created earlier.
 
 Create a second file in the `dynatrace` folder called `sli.yaml`. This is how we define what metrics to pull out of Dynatrace.
 
-This metrics ID is created automatically when the container image runs and pushes metrics to Dynatrace.
+This metric ID is created automatically when the container image runs and pushes metrics to Dynatrace.
 
 If you're using a different severity, just change `CRITICAL` to whatever level you want (case sensitive)!
 
@@ -169,7 +169,7 @@ indicators:
 
 Move back one directory to the `trivyservice` folder and create a file called `slo.yaml`. This will hold your SLO definitions that Keptn will use once it has pulled the metrics.
 
-In our case, tell KEptn that as long as we have fewer than 10 CRITICAL vulnerabilities, the metric is a pass.
+In our case, tell Keptn that as long as we have fewer than 10 CRITICAL vulnerabilities, the metric is a pass.
 
 ```
 spec_version: "0.1.0"
