@@ -10,7 +10,7 @@
 
 Gather details:
 - Dynatrace tenant ID: `abc123.live.dynatrace.com`
-- Dynatrace API token: `dtc01.***`
+- Dynatrace API token: `dtc01.***` ('ingest metrics' and 'read metrics' scopes)
 - Keptn Bridge Username: `default: keptn or see below`
 - Keptn Bridge password: `see below`
 - Keptn API URL: `see below`
@@ -200,6 +200,8 @@ So now ask Keptn to run the `demosequence`.
 
 ```
 HTTP POST to http://keptn-ip/api/v1/event
+-H "x-token: $KEPTN_API_TOKEN"
+
 {
   "data": {
     "project": "trivyintegration",
