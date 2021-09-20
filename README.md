@@ -94,6 +94,16 @@ keptn create project trivyintegration \
 keptn create service trivyservice --project=trivyintegration
 ```
 
+## Use Dynatrace Metrics in this Project
+Tell Keptn to use Dynatrace for metrics for this Keptn project.
+```
+keptn configure monitoring dynatrace --project=trivyintegration
+```
+You may receive the follow error, ignore it. By default keptn looks for a secret called `dynatrace` but we use one called `dynatrace-api-token` so we can ignore this warning:
+```
+failed to load Dynatrace credentials: key DT_TENANT was not found in secret "dynatrace"
+```
+
 ## Setup Job Executor Service
 Switch to the `main` branch and create a new folder called `job` under the `trivyservice` folder.
 Inside the `job` folder, create a file called `config.yaml`:
